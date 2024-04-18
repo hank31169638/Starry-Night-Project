@@ -98,6 +98,7 @@ class UserSigninView(APIView):
         success = response_json.get("success", False)
         # score 是 reCAPTCHA v3 返回的用户分数，范围从0.0到1.0
         score = response_json.get("score", None)
+        print(response_json)
         # success is a boolean value indicating whether the captcha is valid or not
         return {
             "success": success,
