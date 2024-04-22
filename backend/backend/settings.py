@@ -11,20 +11,21 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
-# Because need to load secret key from .env.development file
 from dotenv import load_dotenv
+# Because need to load secret key from .env.development.development file
+
 import os
 
-# load .env.development file
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv()
-
+# load .env.development.development file
+load_dotenv(dotenv_path=os.path.join(BASE_DIR, '.env.development'))
 # set recaptcha secret key
-RECAPTCHA_SECRET_KEY = os.getenv('RECAPTCHA_SECRET_KEY')
+RECAPTCHA_SECRET_KEY_V2 = os.getenv('RECAPTCHA_SECRET_KEY_V2')
+RECAPTCHA_SECRET_KEY_V3 = os.getenv('RECAPTCHA_SECRET_KEY_V3')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
+    'wh',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -84,8 +86,6 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Taipei'
-
-
 
 ROOT_URLCONF = 'backend.urls'
 

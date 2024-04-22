@@ -41,6 +41,9 @@ export default function SignInPasswordField({label}: PasswordFieldProps) {
                         </InputAdornment>
                     ),
                 }}
+                sx={{
+                    marginBottom: 5,
+                }}
             />
         </>
     );

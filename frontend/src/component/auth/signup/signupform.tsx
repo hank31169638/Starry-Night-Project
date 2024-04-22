@@ -68,7 +68,7 @@ export default function SignupForm() {
             }}
         >
             <SignupFormHeader/>
-            <Box component="form" method='post' noValidate sx={{mt: 1}} onSubmit={handleSubmit}
+            <Box component="form" method='post' noValidate sx={{mt: 1,mr:5}} onSubmit={handleSubmit}
             >
                 <SignupFields Errors={errors}/>
                 <SignupFormActions/>

@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from django.contrib.auth.models import User
 from .serializers import UserSignupSerializers, UserSigninSerializers
 
 from rest_framework.response import Response
@@ -39,12 +37,17 @@ class UserSignupView(APIView):
 
 class UserSigninView(APIView):
     def post(self, request):
+        recaptcha_token_v2 = self.request.data.get('token_v2', None)
+        verify_result_v2 = self.verify_recaptcha_v2(recaptcha_token_v2)
+        score = verify_result_v2.get("score", None)
+        if not verify_result_v2.get("success", False):
+            return Response({"status": '403', 'errors': '你可能為機器人，請再試一次.', 'score': score})
 
-        recaptcha_token = request.data.get('token', None)
-
-        verify_result = self.verify_recaptcha(recaptcha_token)
-        score = verify_result.get("score", None)
-        if not verify_result.get("success", False):
+        # recaptcha_v3 verification
+        recaptcha_token_v3 = request.data.get('token_v3', None)
+        verify_result_v3 = self.verify_recaptcha_v3(recaptcha_token_v3)
+        score = verify_result_v3.get("score", None)
+        if not verify_result_v3.get("success", False):
             return Response({"status": '403', 'errors': '你可能為機器人，請再試一次.', 'score': score})
 
         # attempt to get username
@@ -86,9 +89,9 @@ class UserSigninView(APIView):
                 cache.set(cache_key, [attempts, timezone.now()], timeout=900)
             return Response({"status": '401', 'errors': "登入失敗，請確認帳號密碼是否正確。"})
 
-    def verify_recaptcha(self, token):
+    def verify_recaptcha_v3(self, token):
         payload = {
-            "secret": settings.RECAPTCHA_SECRET_KEY,
+            "secret": settings.RECAPTCHA_SECRET_KEY_V3,
             "response": token
         }
         response = requests.post(
@@ -98,9 +101,21 @@ class UserSigninView(APIView):
         success = response_json.get("success", False)
         # score 是 reCAPTCHA v3 返回的用户分数，范围从0.0到1.0
         score = response_json.get("score", None)
-        print(response_json)
         # success is a boolean value indicating whether the captcha is valid or not
         return {
             "success": success,
             "score": score
         }
+
+    def verify_recaptcha_v2(self, token):
+        payload = {
+            "secret": settings.RECAPTCHA_SECRET_KEY_V2,
+            "response": token
+        }
+
+        res = requests.post(
+            "https://www.google.com/recaptcha/api/siteverify", data=payload
+        )
+        response_json = res.json()
+
+        return response_json

@@ -11,8 +11,19 @@ import {useRouter} from "next/navigation";
 
 export default function SigninForm() {
     const router = useRouter();
+    const [state, setState] = useState({
+        captcha: false,
+        'recaptcha_v2': '',
+    })
     const [errors, setErrors] = useState(" ");
     const {executeRecaptcha} = useGoogleReCaptcha();
+
+    const handleRecaptcha = (token: string) => {
+        setState({
+            captcha: true,
+            'recaptcha_v2': token,
+        })
+    }
 
     const handleSignIn = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -21,7 +32,7 @@ export default function SigninForm() {
         const password = data.get('password')
 
         if (executeRecaptcha) {
-            const recaptchaToken = await executeRecaptcha('inquirySubmit');
+            const recaptchaToken_v3 = await executeRecaptcha('inquirySubmit');
             if (username && password) {// 检查其输出
 
                 fetch(`${process.env.NEXT_PUBLIC_API_URL}/signin`, {
@@ -30,7 +41,8 @@ export default function SigninForm() {
                     body: JSON.stringify({
                         username: username,
                         password: password,
-                        token: recaptchaToken,
+                        token_v2: state['recaptcha_v2'],
+                        token_v3: recaptchaToken_v3,
                     })
                 })
                     .then((response) => response.json())
@@ -70,7 +82,7 @@ export default function SigninForm() {
             <SigninFormHeader/>
             <Box component="form" method='post' noValidate sx={{mt: 1}} onSubmit={handleSignIn}>
                 <ErrorField error={errors}/>
-                <SigninFields/>
+                <SigninFields handleRecaptcha={handleRecaptcha}/>
                 <SigninFormaActions/>
             </Box>
         </Box>
