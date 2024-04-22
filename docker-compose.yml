@@ -7,7 +7,7 @@ services:
       - "6379:6379"
 
   django:
-    build: ./backend  # 假设您的 Django Dockerfile 在 ./django 目录下
+    build: ../../Test/approuteTest_1/backend  # 假设您的 Django Dockerfile 在 ./django 目录下
     command: python manage.py runserver # production environment -> gunicorn backend.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ./backend:/app
@@ -17,7 +17,7 @@ services:
       - redis
 
   celery:
-    build: ./backend  # Celery 可以使用同一个 Dockerfile
+    build: ../../Test/approuteTest_1/backend  # Celery 可以使用同一个 Dockerfile
     command: celery -A backend worker -l info
     volumes:
       - ./django:/app
@@ -26,7 +26,7 @@ services:
       - django
 
   nextjs:
-    build: ./frontend  # 假设您的 Next.js Dockerfile 在 ./nextjs 目录下
+    build: ../../Test/approuteTest_1/frontend  # 假设您的 Next.js Dockerfile 在 ./nextjs 目录下
     command: npm run dev
     ports:
       - "3000:3000"

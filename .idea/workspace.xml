@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b8ed5bc-fbb9-4310-80f9-929402f77987" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/approuteTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.buildpacks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.env.production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/runtime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~$開發日誌.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +73,11 @@
       <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\frontend\src\component" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\frontend" />
+      <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\backend" />
+      <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest" />
       <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\nginx" />
       <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\nginx\conf.d" />
-      <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\backend" />
-      <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\backend\backend" />
-      <recent name="C:\Users\hank3\OneDrive\DeskTop\Program Language\Python\Project\BlogProjectDevelopment\approuteTest\frontend\src\component\auth\common" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -135,6 +120,7 @@
       <workItem from="1713534544632" duration="2220000" />
       <workItem from="1713591899109" duration="12895000" />
       <workItem from="1713782024414" duration="900000" />
+      <workItem from="1713783535366" duration="324000" />
     </task>
     <servers />
   </component>
