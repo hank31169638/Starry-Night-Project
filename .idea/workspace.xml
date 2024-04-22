@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b8ed5bc-fbb9-4310-80f9-929402f77987" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/approuteTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/.buildpacks" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/.env.production" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/Procfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/runtime.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/~$開發日誌.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" />
@@ -126,7 +134,7 @@
       <workItem from="1713449652217" duration="6136000" />
       <workItem from="1713534544632" duration="2220000" />
       <workItem from="1713591899109" duration="12895000" />
-      <workItem from="1713782024414" duration="764000" />
+      <workItem from="1713782024414" duration="900000" />
     </task>
     <servers />
   </component>
